@@ -1,6 +1,6 @@
 function Header() {
     return (
-        <h1>Desde Header</h1>
+        <h1 className="">Desde Header</h1>
     )
 };
 
