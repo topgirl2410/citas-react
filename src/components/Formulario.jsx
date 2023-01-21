@@ -11,7 +11,7 @@ const Formulario = () => {
                     Administralos
                 </span>
             </p>
-            <form className='bg-white shadow-md rounded-lg py-5 px-5'>
+            <form className='bg-white shadow-md rounded-lg py-5 px-5 mb-3'>
                 <div className='mb-5' >
                     <label htmlFor='mascota'
                         className='block text-gray-700 uppercase font-bold '
@@ -44,7 +44,7 @@ const Formulario = () => {
                     <label htmlFor='email'
                         className='block text-gray-700 uppercase font-bold '
                     >
-                        Email
+                        Email Contacto Propietario
                     </label>
                     <input
                         id='email'
@@ -66,6 +66,27 @@ const Formulario = () => {
                         className="border-2 w-full p-2 m-2 placeholder-slate-700 rounded-md"
                     />
                 </div>
+
+                <div className="mb-5">
+                    <label
+                        htmlFor="sintomas"
+                        className='block text-gray-700 uppercase font-bold'
+                    >Síntomas de la Mascota
+                    </label>
+                    <textarea
+                        id='sintomas'
+                        className='border-2 w-full p-2 m-2 placeholder-slate-700 rounded-md'
+                        placeholder='Describe los síntomas de tu mascota...'
+                    />
+                </div>
+
+                <input
+                    type="submit"
+                    className='bg-purple-600 w-full p-3 text-white 
+                    uppercase font-bold hover:bg-purple-800 cursor-pointer
+                    transition-all'
+                    value="Agregar Paciente"
+                />
             </form>
         </div>
     )
