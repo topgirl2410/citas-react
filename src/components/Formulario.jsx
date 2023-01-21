@@ -7,15 +7,21 @@ const Formulario = () => {
     const [alta, setAlta] = useState('');
     const [sintomas, setSintomas] = useState('');
 
+    const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log("Enviando formulario")
-    }
+        // Validacion del formulario
+        if ([nombre, propietario, email, alta.sintomas].includes('')) {
+            setError(true);
+            return;
+        }
+        setError(false)
 
+    }
     return (
-        <div className='md:w-1/2 lg:w-2/5'>
+        <div className='md:w-1/2 lg:w-2/5 mx-4'>
             <h2 className='font-black text-3xl text-center'>Seguimiento Pacientes</h2>
 
             <p className='text-xl mt-5 text-center mb-5'>
@@ -27,6 +33,12 @@ const Formulario = () => {
             <form
                 onSubmit={handleSubmit}
                 className='bg-white shadow-md rounded-lg py-5 px-5 mb-3'>
+                {error && (
+                    <div className='bg-red-600 text-white text-center rounded-md p-3 
+                    uppercase font-bold mb-3'>
+                        <p>Todos los campos son obligatorios</p>
+                    </div>
+                )}
                 <div className='mb-5' >
                     <label htmlFor='mascota'
                         className='block text-gray-700 uppercase font-bold '
