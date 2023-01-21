@@ -5,9 +5,9 @@ const Formulario = () => {
         <div className='md:w-1/2 lg:w-2/5'>
             <h2 className='font-black text-3xl text-center'>Seguimiento Pacientes</h2>
 
-            <p className='text-lg mt-5 text-center mb-5'>
+            <p className='text-xl mt-5 text-center mb-5'>
                 Añade Pacientes y {' '}
-                <span className='text-purple-600 font-bold'>
+                <span className='text-purple-600  font-bold'>
                     Administralos
                 </span>
             </p>
