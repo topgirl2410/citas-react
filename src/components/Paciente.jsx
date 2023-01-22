@@ -1,6 +1,6 @@
 
 
-const Paciente = ({ paciente }) => {
+const Paciente = ({ paciente, setPaciente }) => {
     const { nombre, propietario, email, alta, sintomas } = paciente;
 
     return (
@@ -51,6 +51,7 @@ const Paciente = ({ paciente }) => {
                     className="py-2 px-10 bg-purple-600 hover:bg-purple-800 text-white 
                 font-bold uppercase rounded-lg mt-4"
                     type="button"
+                    onClick={() => setPaciente(paciente)}
 
                 >
                     Editar
