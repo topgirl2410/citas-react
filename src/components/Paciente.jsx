@@ -1,7 +1,7 @@
 
 
 const Paciente = ({ paciente }) => {
-    console.log(paciente)
+    const { nombre, propietario, email, alta, sintomas } = paciente;
 
     return (
         <div
@@ -11,7 +11,7 @@ const Paciente = ({ paciente }) => {
             >Nombre: {''}
                 <span
                     className="font-normal normal-case"
-                >{paciente.nombre}</span>
+                >{nombre}</span>
             </p>
 
             <p
@@ -19,7 +19,7 @@ const Paciente = ({ paciente }) => {
             > Propietario: {''}
                 <span
                     className="font-normal normal-case"
-                >{paciente.propietario}</span>
+                >{propietario}</span>
             </p>
 
             <p
@@ -27,7 +27,7 @@ const Paciente = ({ paciente }) => {
             >Email: {''}
                 <span
                     className="font-normal normal-case"
-                >{paciente.email}</span>
+                >{email}</span>
             </p>
 
             <p
@@ -35,7 +35,7 @@ const Paciente = ({ paciente }) => {
             >Fecha de Alta: {''}
                 <span
                     className="font-normal normal-case"
-                >{paciente.alta}</span>
+                >{alta}</span>
             </p>
 
             <p
@@ -43,7 +43,7 @@ const Paciente = ({ paciente }) => {
             >Síntomas de la Mascota: {''}
                 <span
                     className="font-normal normal-case"
-                >{paciente.sintomas}</span>
+                >{sintomas}</span>
             </p>
         </div>
     )
