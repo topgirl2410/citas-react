@@ -1,6 +1,8 @@
 
 
-const Paciente = () => {
+const Paciente = ({ paciente }) => {
+    console.log(paciente)
+
     return (
         <div
             className="m-5 bg-white shadow-md rounded-lg px-5 py-5">
@@ -9,7 +11,7 @@ const Paciente = () => {
             >Nombre: {''}
                 <span
                     className="font-normal normal-case"
-                >Luna</span>
+                >{paciente.nombre}</span>
             </p>
 
             <p
@@ -17,7 +19,7 @@ const Paciente = () => {
             > Propietario: {''}
                 <span
                     className="font-normal normal-case"
-                >María</span>
+                >{paciente.propietario}</span>
             </p>
 
             <p
@@ -25,7 +27,7 @@ const Paciente = () => {
             >Email: {''}
                 <span
                     className="font-normal normal-case"
-                >correo@correo.com</span>
+                >{paciente.email}</span>
             </p>
 
             <p
@@ -33,7 +35,7 @@ const Paciente = () => {
             >Fecha de Alta: {''}
                 <span
                     className="font-normal normal-case"
-                >10/10/2022</span>
+                >{paciente.alta}</span>
             </p>
 
             <p
@@ -41,11 +43,8 @@ const Paciente = () => {
             >Síntomas de la Mascota: {''}
                 <span
                     className="font-normal normal-case"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos repudiandae,
-                    error quo excepturi alias earum quibusdam voluptatum debitis ut vitae distinctio
-                    magnam, repellat similique unde tempora quia voluptates. Unde.</span>
+                >{paciente.sintomas}</span>
             </p>
-
         </div>
     )
 }
