@@ -11,7 +11,13 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        console.log('Nuevo paciente')
+        if (Object.keys(paciente).length > 0) {
+            setNombre(paciente.nombre)
+            setPropietario(paciente.propietario)
+            setEmail(paciente.email)
+            setAlta(paciente.alta)
+            setSintomas(paciente.sintomas)
+        }
     }, [paciente])
 
     const generarId = () => {
@@ -152,7 +158,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
                     className='bg-purple-600 w-full p-3 text-white 
                     uppercase font-bold hover:bg-purple-800 cursor-pointer
                     transition-all'
-                    value="Agregar Paciente"
+                    value={paciente.id ? 'Editar Paciente' : 'Crear Paciente'}
                 />
             </form>
         </div>
