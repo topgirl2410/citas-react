@@ -43,11 +43,23 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             propietario,
             email,
             alta,
-            sintomas,
-            id: generarId()
+            sintomas
         }
 
-        setPacientes([...pacientes, objetoPaciente]);
+        if (paciente.id) {
+            // Editando un registro
+            objetoPaciente.id = paciente.id;
+
+            const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id
+                === paciente.id ? objetoPaciente : pacienteState);
+
+            setPacientes(pacientesActualizados);
+
+        } else {
+            // Creando nuevo registro
+            objetoPaciente.id = generarId();
+            setPacientes([...pacientes, objetoPaciente]);
+        }
 
         // Reiniciar Formulario
         setNombre('')
@@ -55,8 +67,9 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
         setEmail('')
         setAlta('')
         setSintomas('')
-
     }
+
+
     return (
         <div className='md:w-1/2 lg:w-2/5 mx-4'>
             <h2 className='font-black text-3xl text-center'>Seguimiento Pacientes</h2>
